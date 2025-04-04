@@ -12,9 +12,9 @@ class Database:
     @staticmethod
     def connect():
         if Database._db is None:
-            uri = "mongodb+srv://your_username:your_password@your-cluster.mongodb.net/?retryWrites=true&w=majority"
+            uri = mongodb+srv://3375403643:xjy1232004@heartflowcluster.xmkes.mongodb.net/?retryWrites=true&w=majority
             client = MongoClient(uri, tls=True, tlsAllowInvalidCertificates=True)
-            Database._db = client["your_db_name"]
+            Database._db = client["HeartFlow"]
 
     @staticmethod
     def get_db():
