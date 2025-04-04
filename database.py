@@ -11,12 +11,10 @@ class Database:
 
     @staticmethod
     def connect():
-        """连接数据库"""
         if Database._db is None:
-            # 仅在第一次连接时初始化MongoClient
-
-            client = MongoClient(settings.MONGODB_URI, tls=True, tlsAllowInvalidCertificates=True)
-            Database._db = client[settings.DB_NAME]
+            uri = "mongodb+srv://your_username:your_password@your-cluster.mongodb.net/?retryWrites=true&w=majority"
+            client = MongoClient(uri, tls=True, tlsAllowInvalidCertificates=True)
+            Database._db = client["your_db_name"]
 
     @staticmethod
     def get_db():
